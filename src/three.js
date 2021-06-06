@@ -35,6 +35,7 @@ function init() {
   controls = new OrbitControls(camera, renderer.domElement);
   controls.minPolarAngle = Math.PI / 2;
   controls.maxPolarAngle = Math.PI / 2;
+  controls.enablePan = false;
   controls.enableZoom = false;
 
   let light = new SpotLight(0xffffff, 4);
