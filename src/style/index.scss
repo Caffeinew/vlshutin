@@ -1,0 +1,187 @@
+@use "global";
+
+body {
+  background-color: #232323;
+  color: #fff;
+}
+main {
+  padding-bottom: 20vh;
+}
+#landing {
+  position: relative;
+  width: 80vw;
+  margin-left: 20vw;
+  height: 140vh;
+
+  .hello {
+    position: relative;
+    z-index: 3;
+    padding: 30vh 0 0 2rem;
+  }
+  h1 {
+    font-size: 124px;
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+  }
+  .background {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #171717;
+  }
+  .image {
+    position: absolute;
+    top: -10vh;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-image: url("../assets/photo1.webp");
+  }
+  .desc {
+    position: absolute;
+    padding: 0.5rem;
+    left: 0;
+    top: 108vh;
+    span {
+      display: block;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 28px;
+      margin-left: 0.1rem;
+    }
+  }
+
+  h2 {
+    font-weight: 300;
+    font-size: 56px;
+  }
+}
+
+#about {
+  position: relative;
+  width: 80%;
+  margin: 70vh auto;
+  background: #171717;
+  height: 165vh;
+  padding: 5%;
+
+  .image {
+    position: absolute;
+    left: 5%;
+    top: -25vh;
+    background-image: url("../assets/photo2.webp");
+    width: 35vw;
+    height: 35vw;
+    background-size: cover;
+  }
+  .about {
+    position: absolute;
+    top: -10vh;
+    left: 45vw;
+    h2 {
+      font-size: 72px;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    span {
+      display: block;
+      font-weight: 300;
+      font-size: 32px;
+      line-height: 1.5;
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  font-size: 32px;
+  font-weight: 400;
+  margin-top: 30vh;
+  padding: 0;
+  margin-left: 0;
+  li {
+    font-weight: 100;
+    line-height: 1.5;
+  }
+}
+.skills {
+  margin-top: 0;
+}
+.experience {
+  position: absolute;
+  background-color: #232323;
+  padding: 2rem;
+  width: 50vw;
+  bottom: -30vh;
+  right: -10vw;
+  color: #bbb;
+  font-size: 28px;
+
+  li:nth-child(odd) {
+    color: #fff;
+    margin: 2rem 0;
+  }
+}
+
+#renderContainer {
+  position: relative;
+  width: 90vw;
+  height: 120vh;
+  margin-left: 10vw;
+  background: #171717;
+  padding: 3rem 4rem;
+
+  .desk {
+    position: relative;
+    margin: 0;
+    margin-top: 5vh;
+    z-index: 2;
+    li {
+      margin-left: 2rem;
+    }
+  }
+  h2 {
+    margin-bottom: 3rem;
+    font-size: 64px;
+  }
+
+  h1 {
+    position: absolute;
+    font-size: 56px;
+    top: -8vh;
+    left: 1rem;
+  }
+  h1,
+  h2 {
+    font-weight: 400;
+  }
+
+  .contact {
+    position: absolute;
+    top: 42vh;
+    width: 50vw;
+    right: 0;
+  }
+}
+
+canvas {
+  width: 60vw;
+  height: 35vw;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+.render-bg {
+  width: 50vw;
+  height: 35vw;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #232323;
+}
+
