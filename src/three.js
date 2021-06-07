@@ -3,6 +3,7 @@ import {
   PerspectiveCamera,
   ReinhardToneMapping,
   WebGLRenderer,
+  LoadingManager,
 } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -11,8 +12,10 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { SSAARenderPass } from "three/examples/jsm/postprocessing/SSAARenderPass";
 import { SpotLight } from "three/src/lights/SpotLight";
 import { HemisphereLight } from "three/src/lights/HemisphereLight";
+import LocomotiveScroll from "locomotive-scroll";
 
 let scene, camera, renderer, controls, composer, mesh;
+let loadingScreen = document.querySelector(".loading-screen");
 
 function init() {
   scene = new Scene();
@@ -22,6 +25,23 @@ function init() {
     1,
     5000
   );
+
+  const manager = new LoadingManager();
+
+  manager.onLoad = function () {
+    loadingScreen.classList.add("remove");
+
+    new LocomotiveScroll({
+      el: container,
+      smooth: true,
+      lerp: 0.05,
+    });
+
+    setTimeout(() => {
+      loadingScreen.remove();
+    }, 500);
+  };
+
   camera.position.x = 0;
   camera.position.y = 0;
   camera.position.z = 5;
@@ -57,7 +77,7 @@ function init() {
   msaaRenderPass.sampleLevel = 2;
   composer.addPass(msaaRenderPass);
 
-  new GLTFLoader().load("./model/scene.glb", function (gltf) {
+  new GLTFLoader(manager).load("./model/scene.glb", function (gltf) {
     mesh = gltf.scene.children[0];
     mesh.position.set(0, -1, 0);
 
@@ -71,4 +91,5 @@ function animate() {
   composer.render();
   requestAnimationFrame(animate);
 }
+
 init();

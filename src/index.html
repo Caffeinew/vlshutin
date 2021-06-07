@@ -7,6 +7,14 @@
     <title>Резюме</title>
   </head>
   <body>
+    <div class="loading-screen">
+      <svg width="200" height="200" viewBox="0 0 100 100">
+        <polyline class="line-cornered stroke-still" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-still" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-animation" points="0,0 100,0 100,100" stroke-width="10" fill="none"></polyline>
+        <polyline class="line-cornered stroke-animation" points="0,0 0,100 100,100" stroke-width="10" fill="none"></polyline>
+      </svg>
+    </div>
     <main id="container">
       <section data-scroll-section id="landing">
         <div class="hello" data-scroll data-scroll-speed="-2">
@@ -33,7 +41,7 @@
           <span>VSU CS student</span>
         </div>
         <ul data-scroll data-scroll-speed="2">
-         Background
+          Background
           <li>Графичекий дизайнер ( фриланс )</li>
           <li>> 2 лет</li>
           <li>Преподаватель веб и графического дизайна</li>
@@ -61,7 +69,12 @@
           <li>English - Pre-intermediate</li>
         </ul>
 
-        <ul class="experience" data-scroll data-scroll-speed="3">
+        <ul
+          class="experience"
+          data-scroll
+          data-scroll-offset="-100%"
+          data-scroll-speed="-3"
+        >
           Experience
           <li>
             Детская школа дополнительного образования TeenSmart<br />
@@ -108,9 +121,14 @@
           <li>-Настройка камеры и освещения</li>
           <li>-Оптимизация</li>
         </ul>
-          <div class="render-bg"></div>
+        <div class="render-bg"></div>
 
-        <ul class="contact" data-scroll data-scroll-speed="3" >
+        <ul
+          class="contact"
+          data-scroll
+          data-scroll-offset="-50%"
+          data-scroll-speed="-1"
+        >
           <h2>Contact me</h2>
           <li>Phone +7 (980) 554-39-85</li>
           <li>Email vlshutin@mail.ru</li>

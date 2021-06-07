@@ -162,7 +162,7 @@ ul {
 
   .contact {
     position: absolute;
-    top: 42vh;
+    top: 50vh;
     width: 50vw;
     right: 0;
   }
@@ -185,3 +185,13 @@ canvas {
   background-color: #232323;
 }
 
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 20;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
