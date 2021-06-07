@@ -9,11 +9,8 @@
   align-items: center;
   transition: transform 0.5s;
   &.remove {
-    transform: translateY(100%);
+    transform: translateY(-100%);
   }
-}
-body {
-  background: #282828;
 }
 
 svg {

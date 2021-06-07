@@ -14,6 +14,8 @@ import { SpotLight } from "three/src/lights/SpotLight";
 import { HemisphereLight } from "three/src/lights/HemisphereLight";
 import LocomotiveScroll from "locomotive-scroll";
 
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
 let scene, camera, renderer, controls, composer, mesh;
 let loadingScreen = document.querySelector(".loading-screen");
 
@@ -30,13 +32,11 @@ function init() {
 
   manager.onLoad = function () {
     loadingScreen.classList.add("remove");
-
     new LocomotiveScroll({
       el: container,
       smooth: true,
       lerp: 0.05,
     });
-
     setTimeout(() => {
       loadingScreen.remove();
     }, 500);
@@ -77,9 +77,14 @@ function init() {
   msaaRenderPass.sampleLevel = 2;
   composer.addPass(msaaRenderPass);
 
-  new GLTFLoader(manager).load("./model/scene.glb", function (gltf) {
+  const draco = new DRACOLoader();
+  draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
+
+  const gltf = new GLTFLoader(manager);
+  gltf.setDRACOLoader(draco);
+  gltf.load("./model/scene.glb", function (gltf) {
     mesh = gltf.scene.children[0];
-    mesh.position.set(0, -1, 0);
+    mesh.position.set(0, 0, 0);
 
     scene.add(mesh);
 
