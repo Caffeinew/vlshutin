@@ -94,13 +94,17 @@ main {
   }
 }
 
-ul {
-  list-style: none;
+.list {
   font-size: 32px;
   font-weight: 400;
   margin-top: 30vh;
-  padding: 0;
-  margin-left: 0;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+ 
   li {
     font-weight: 100;
     line-height: 1.5;
@@ -112,6 +116,7 @@ ul {
 .experience {
   position: absolute;
   background-color: #232323;
+  margin:0;
   padding: 2rem;
   width: 50vw;
   bottom: -30vh;
